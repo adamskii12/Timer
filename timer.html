@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <link rel="stylesheet" href="timerStyles.css">
+ <title>Timer!</title>
+ <meta name="description" content="Timer">
+ <meta name="keywords" content="timer countdown digital">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="author" content="Adam IW">
+</head>
+
+<body onload="displayDate()">
+ <div class="dateCont">
+  <div>By: Adam IW</div>
+  <div></div>
+  <div id="date" class="date">date</div>
+ </div>
+ <h1>TIMER</h1>
+ <div class="errs">
+  <div id="errMin" class="err errMin">Maximum: 100</div>
+  <div id="errSec" class="err">Maximum: 59</div>
+ </div>
+ <div class="inputs">
+  <input id="mins" class="time" type="number" step=1 min=0 max=100 onchange="minutesInput.checkValidInput()" value=0> <span style="font-family:monospace">min</span>
+  <input id="secs" class="time" style="margin-left:50px; width:75px" type="number" step=1 min=0 max=59 onchange ="secondsInput.checkValidInput()" value=0> <span style="font-family:monospace">sec</span>
+ </div>
+ <div id="errNeg" class="err errNeg">Time must be a value greater than 0</div><br>
+ <div class="buttons">
+  <div><button id="startBtn" class="startBtn"onclick="validateInputs(); timer.start(); startButton.changeMode();">START</button></div>
+  <div><button id="resetBtn" class="resetBtn" onclick="timer.resetTimer()">RESET</button></div>
+ </div>
+ <div id="timerCont" class="timerCont">
+  <div id="minutes" class="timerMinutes">00</div><span>:</span>
+  <div id="seconds" class="timerSeconds">00</div>
+ </div>
+ <script src="timerScript.js"></script>
+</body>
+</html>
